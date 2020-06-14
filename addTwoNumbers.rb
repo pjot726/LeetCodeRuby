@@ -31,6 +31,8 @@ def add_two_numbers(l1, l2)
         l1 = l1.next
     end   
     
+    # Iterate through the array, and make it so 
+    # that no element is >= 10.
     sums.push(0)
     sums.each_with_index { |val, index|
         if val >= 10
@@ -39,6 +41,7 @@ def add_two_numbers(l1, l2)
         end
     }
     
+    # Remove extraneous zero if it exists.
     if sums.last == 0
         sums.pop()
     end
@@ -46,6 +49,7 @@ def add_two_numbers(l1, l2)
     root = ListNode.new
     trav = root
     
+    # Create list from array.
     sums.each_with_index { |sumVal, index|
         if index == sums.length - 1
             trav.val = sumVal
